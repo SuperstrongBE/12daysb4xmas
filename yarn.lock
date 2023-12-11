@@ -611,7 +611,7 @@
     pako "2.0.3"
     ripemd-ts "0.0.2"
 
-"@proton/js@^27.5.1", "@proton/js@^27.5.7":
+"@proton/js@^27.13.0", "@proton/js@^27.5.1", "@proton/js@^27.5.7":
   version "27.13.0"
   resolved "https://registry.yarnpkg.com/@proton/js/-/js-27.13.0.tgz#fe0f3c4dd5da48295f44896e2fa1abb7824a55be"
   integrity sha512-mxxLeWPU2Tmb+XAJUTGqYecKy1TNrlXyjzRjbAfAqreTjZbpjRxFPr8xV2H/F0n8g44RNTAEmBOeM96roiS3BQ==
@@ -1214,6 +1214,13 @@ atomically@^1.7.0:
   resolved "https://registry.yarnpkg.com/atomically/-/atomically-1.7.0.tgz#c07a0458432ea6dbc9a3506fffa424b48bccaafe"
   integrity sha512-Xcz9l0z7y9yQ9rdDaxlmaI4uJHf/T8g9hOEzJcsEqX2SjCj4J20uK7+ldkDHMbpJDK76wF7xEIgxc/vSlsfw5w==
 
+atomicassets@^1.5.1:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/atomicassets/-/atomicassets-1.5.1.tgz#89579bd4009e5dba34a41eca63302e9786cc353d"
+  integrity sha512-KZI/NghU68t2jEykR9KI6CVoDeErcMiNYMLHz3F7mrkFWlTXVjiJ6tbT3y2VDaF/tcDqmLd0szNnVl1/QgTTNw==
+  dependencies:
+    big-integer "^1.6.51"
+
 available-typed-arrays@^1.0.5:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/available-typed-arrays/-/available-typed-arrays-1.0.5.tgz#92f95616501069d07d10edb2fc37d3e1c65123b7"
@@ -1276,6 +1283,11 @@ base64url@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/base64url/-/base64url-3.0.1.tgz#6399d572e2bc3f90a9a8b22d5dbb0a32d33f788d"
   integrity sha512-ir1UPr3dkwexU7FdV8qBBbNDRUhMmIekYMFZfi+C/sLNnRESKPl23nB9b2pltqfOQNnGzsDdId90AEtG5tCx4A==
+
+big-integer@^1.6.51:
+  version "1.6.52"
+  resolved "https://registry.yarnpkg.com/big-integer/-/big-integer-1.6.52.tgz#60a887f3047614a8e1bffe5d7173490a97dc8c85"
+  integrity sha512-QxD8cf2eVqJOOz63z6JIN9BzvVs/dlySa5HGSBH5xtR8dPteIRQnBxxKqkNTiT6jbDTF6jAfrd4oMcND9RGbQg==
 
 bignumber.js@^9.0.1, bignumber.js@^9.0.2:
   version "9.1.2"

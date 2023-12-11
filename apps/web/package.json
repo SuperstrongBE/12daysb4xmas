@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@proton/js": "^27.13.0",
+    "atomicassets": "^1.5.1",
     "dotenv": "^16.3.1",
     "next": "14.0.4",
     "next-transpile-modules": "^10.0.1",

@@ -1,5 +1,16 @@
 /** @type {import('next').NextConfig} */
 
-const nextConfig = {};
+const nextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "5fhc.mypinata.cloud",
+        port: "",
+        pathname: "/ipfs/**",
+      },
+    ],
+  },
+};
 
 module.exports = nextConfig;
