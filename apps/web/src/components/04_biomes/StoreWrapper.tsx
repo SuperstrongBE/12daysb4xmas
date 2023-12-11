@@ -1,5 +1,5 @@
 'use client'
-import { StoreProvider, configureStore } from "@twelvedays/store"
+import { StoreProvider, configureStore } from "store"
 import { ReactNode } from "react"
 
 const store = configureStore({
