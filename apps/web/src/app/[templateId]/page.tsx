@@ -5,7 +5,7 @@ import { ITemplate } from "atomicassets/build/API/Explorer/Objects";
 import { cache } from 'react'
 
 const getItem = cache(async (templateId: string):Promise<ITemplate> => {
-  const api = new ExplorerApi(process.env.ATOMIC_ENDPOINT, "atomicassets", { fetch });
+  const api = new ExplorerApi(process.env.ATOMIC_ENDPOINT!, "atomicassets", { fetch });
   return api.getTemplate('12daysb4xmas',templateId)
   
 })
