@@ -1,0 +1,20 @@
+{
+  "name": "@12daysb4xmas/store",
+  "version": "1.0.0",
+  "description": "",
+  "main": "build/",
+  "scripts": {
+    "build": "rimraf ./build && tsc",
+    "dev": "tsc --watch"
+  },
+  "dependencies": {
+    "@proton/web-sdk": "^4.2.15",
+    "easy-peasy": "^6.0.4"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "rimraf": "^5.0.5"
+  }
+}

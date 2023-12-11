@@ -1,0 +1,23 @@
+{
+  "name": "12daysb4xmas",
+  "version": "0.0.1",
+  "description": "A cool monorepo ",
+  "main": "build",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently  \" npm run dev -w web\" \"npm run dev -w @12daysb4xmas/store\""
+  },
+  "workspaces": [
+    "./apps/*",
+    "./packages/*",
+    "./contracts/*"
+  ],
+  "author": "@RockerOne",
+  "license": "ISC",
+  "dependencies": {
+    "@merrycrypto/store": "^1.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
