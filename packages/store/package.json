@@ -4,6 +4,9 @@
   "description": "",
   "private": true,
   "main": "build/",
+  "files": [
+    "src"
+  ],
   "scripts": {
     "build": "rimraf ./build && tsc",
     "dev": "tsc --watch"

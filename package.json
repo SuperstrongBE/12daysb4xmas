@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "next": "yarn --cwd packages/store build && yarn --cwd apps/web dev",
+    "next": "yarn --cwd packages/store build && yarn --cwd apps/web build",
     "dev": "concurrently  \"yarn --cwd apps/web run dev\" \"yarn --cwd packages/store dev\""
   },
   "workspaces": [
