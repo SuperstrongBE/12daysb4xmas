@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@12daysb4xmas/store": "1.0.0",
     "dotenv": "^16.3.1",
     "next": "14.0.4",
     "react": "^18",

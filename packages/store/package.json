@@ -2,6 +2,7 @@
   "name": "@12daysb4xmas/store",
   "version": "1.0.0",
   "description": "",
+  "private": true,
   "main": "build/",
   "scripts": {
     "build": "rimraf ./build && tsc",
