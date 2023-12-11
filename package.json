@@ -3,21 +3,24 @@
   "version": "0.0.1",
   "description": "A cool monorepo ",
   "main": "build",
+  "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "concurrently  \" npm run dev -w web\" \"npm run dev -w @12daysb4xmas/store\""
+    "next": "yarn --cwd apps/web dev",
+    "dev": "concurrently  \"yarn --cwd apps/web run dev\" \"yarn --cwd packages/store dev\""
   },
   "workspaces": [
-    "./apps/*",
-    "./packages/*",
-    "./contracts/*"
+    "apps/*",
+    "packages/*",
+    "contracts/*"
   ],
   "author": "@RockerOne",
   "license": "ISC",
   "dependencies": {
-    "@merrycrypto/store": "^1.0.0"
+    "yarn": "^1.22.21"
   },
   "devDependencies": {
     "concurrently": "^8.2.2"
-  }
+  },
+  "repository": "git@github-remy:SuperstrongBE/12daysb4xmas.git"
 }
