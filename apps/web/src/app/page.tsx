@@ -1,5 +1,5 @@
 'use client'
-import { apiCoreUseStoreActions } from "@12daysb4xmas/store"
+import { apiCoreUseStoreActions } from "@twelvedays/store"
 
 export default function Home() {
 
