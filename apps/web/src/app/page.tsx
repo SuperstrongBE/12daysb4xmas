@@ -7,7 +7,7 @@ export default function Home() {
 
   return (
     <main >
-      <button onClick={()=>connect}>
+      <button onClick={()=>connect()}>
         Connect proton
       </button>
     </main>
