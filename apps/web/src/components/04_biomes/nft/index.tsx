@@ -1,7 +1,10 @@
 'use client'
+import { XprConnectButton } from "@/components/02_molecules/proton-connect-button/proton-connect-button"
+import { generateMintAction } from "@/utils/actions"
 import { ITemplate } from "atomicassets/build/API/Explorer/Objects"
 import Image from "next/image"
-import { HTMLAttributes } from "react"
+import { HTMLAttributes, useCallback } from "react"
+import { apiCoreUseStoreActions, apiCoreUseStoreState } from "store"
 
 type NFTLayoutProps = HTMLAttributes<HTMLDivElement> & {
   template: ITemplate,
@@ -9,6 +12,18 @@ type NFTLayoutProps = HTMLAttributes<HTMLDivElement> & {
 }
 export const NFTLayout: React.FunctionComponent<NFTLayoutProps> = ({ipfsResolver,template,...rest}) => { 
 
+  const { session } = apiCoreUseStoreState(state => state.auth.data);
+  const { connect } = apiCoreUseStoreActions(state => state.auth);
+  const claimActionTransact = useCallback(() => {
+    if (!session) return;
+    const actions = [
+      generateMintAction(session?.auth.actor.toString()!, '12daysb4xmas')
+    ];
+    session.transact({ actions: actions }).then((res) => {
+      console.log(res)
+    })
+
+  },[session])
   return <div {...rest}>
     <div>
     <Image
@@ -21,9 +36,11 @@ export const NFTLayout: React.FunctionComponent<NFTLayoutProps> = ({ipfsResolver
     <div>
       {template.immutable_data.title}
       {template.immutable_data.description}
-      <button>Mint it !</button>
+      
     </div>
-    
+    <XprConnectButton onClick={() => { connect() }} onAction={() => {
+      claimActionTransact()
+    }} session={session}/>
   </div>
 
 }
