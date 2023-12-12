@@ -41,7 +41,7 @@ export class TwelveDaysContract extends Contract {
     
     if (this.hasCurrentClaimRightNow(currentClaimable)) { 
 
-      check(!this.accountHasClaim(account,currentClaimable), `🎅 Santa says: Oh Oh Oh, you've already claimed this! I may had you to the naughty list`);
+      check(!this.accountHasClaim(account,currentClaimable), `🎅 Santa says: Oh Oh Oh, you've already claimed this! I may add you to the naughty list`);
       this.applyMint(account, currentClaimable);
       const newLog = new LogsTable(this.logTable.availablePrimaryKey, `Will mint template ${currentClaimable.templateId}`)
       this.logTable.store(newLog,this.receiver)

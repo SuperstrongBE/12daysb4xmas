@@ -1,5 +1,5 @@
 
-import { NFTLayout } from "@/components/04_biomes/nft";
+import { NFTLayout } from "@/components/04_biomes/nft/NFTDetailLayout";
 import { ExplorerApi } from "atomicassets";
 import { ITemplate } from "atomicassets/build/API/Explorer/Objects";
 import { cache } from 'react'
