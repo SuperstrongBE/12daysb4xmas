@@ -36,7 +36,10 @@ export interface AuthModel {
 
 export interface AuthModelConfiguration {
 
-    protonEndpoints:string[]
+    protonEndpoints: string[],
+    appName: string,
+    requestedAccount:string,
+    
 
 }
 
@@ -62,11 +65,14 @@ export function configureAuthModel(config: AuthModelConfiguration): AuthModel {
             actions
             const { session, link } = await ConnectWallet({
                 linkOptions: {
-                    //TODO add a better way to inject endpoint
-                    endpoints: config.protonEndpoints
-                    ,
+                    endpoints: config.protonEndpoints,
                 },
-    
+                selectorOptions: {
+                    appName: config.appName,
+                },
+                transportOptions: {
+                    requestAccount:config.requestedAccount
+                }
             })
             actions.setLink(link)
             actions.setSession(session)
