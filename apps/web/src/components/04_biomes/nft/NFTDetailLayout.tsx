@@ -27,15 +27,9 @@ export const NFTLayout: React.FunctionComponent<NFTLayoutProps> = ({ipfsResolver
   return <div className={`container mx-auto grid md:grid-cols-2 sm:grid-cols-1 gap-24 ${className}`} {...rest}>
 
     <div className="relative aspect-square box with-frame">
-    <Image
-      alt={template.immutable_data.title}
-        src={`${ipfsResolver}/${template.immutable_data.image}`} 
-        fill
-        style={{
-          objectFit: 'contain',
-        }}
-        sizes="1280px"
-    ></Image>
+      
+    <video autoPlay muted src={`${ipfsResolver}/${template.immutable_data.video}`}></video>
+    
     </div>
     <div className="grid grid-cols-1 gap-6 content-center grid-rows-[repeat(3,min-content)]">
     <Image
@@ -44,8 +38,8 @@ export const NFTLayout: React.FunctionComponent<NFTLayoutProps> = ({ipfsResolver
       width={343}
       height={154}
     ></Image>
-      {template.immutable_data.title}
-      <p className="leading-6">{template.immutable_data.description}</p>
+      {template.immutable_data.name}
+      <p className="leading-6">{template.immutable_data.desc}</p>
       {/* <p className="leading-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisi nisi, aliquet id justo eu, tempus sagittis metus. Sed tincidunt, tortor quis posuere finibus, justo orci euismod velit, id dignissim est neque imperdiet ex.</p> */}
       <XprConnectButton onClick={() => { connect() }} onAction={() => {
       claimActionTransact()

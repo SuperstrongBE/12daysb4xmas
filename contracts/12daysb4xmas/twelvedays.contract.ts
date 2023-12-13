@@ -11,7 +11,7 @@ export class TwelveDaysContract extends Contract {
   private claimablesTable: TableStore<ClaimablesTable> = new TableStore<ClaimablesTable>(this.receiver); 
   
   @action('template.reg')
-  registerTemplate(templateId: u32,collectionName:Name, activeStartTime: u32, activeEndTime: u32, immutable: AtomicAttribute[], mutable: AtomicAttribute[]): void {
+  registerTemplate(templateId: u32,collectionName:Name, activeStartTime: u64, activeEndTime: u64, immutable: AtomicAttribute[], mutable: AtomicAttribute[]): void {
     
     requireAuth(this.receiver);
     const aaTemplatesTable: TableStore<Templates> = new TableStore<Templates>(ATOMICASSETS_CONTRACT,collectionName); 

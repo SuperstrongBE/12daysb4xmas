@@ -988,11 +988,6 @@ html {
   }
 }
 
-.link {
-  cursor: pointer;
-  text-decoration-line: underline;
-}
-
 :where(.menu li) .badge {
   justify-self: end;
 }
@@ -1210,16 +1205,6 @@ html {
   margin-top: 0px;
   margin-bottom: 0px;
   margin-inline-start: -1px;
-}
-
-.link:focus {
-  outline: 2px solid transparent;
-  outline-offset: 2px;
-}
-
-.link:focus-visible {
-  outline: 2px solid currentColor;
-  outline-offset: 2px;
 }
 
 @keyframes modal-pop {
@@ -1492,7 +1477,6 @@ html[data-theme="twelvedays"] .overlay {
 .box.with-frame {
   font-size: 20px;
   border: 10px solid black;
-  padding: 35px;
   border-image-source: url("/nft_frame.png");
   border-image-repeat: repeat;
   border-image-slice: 34;
@@ -1583,10 +1567,6 @@ html[data-theme="twelvedays"] .overlay {
 
 .justify-end {
   justify-content: flex-end;
-}
-
-.justify-items-end {
-  justify-items: end;
 }
 
 .justify-items-center {

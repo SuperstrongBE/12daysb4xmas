@@ -11,6 +11,12 @@ const nextConfig = {
       },
       {
         protocol: "https",
+        hostname: "proton.mypinata.cloud",
+        port: "",
+        pathname: "/ipfs/**",
+      },
+      {
+        protocol: "https",
         hostname: "framerusercontent.com",
         port: "",
         pathname: "/**",
