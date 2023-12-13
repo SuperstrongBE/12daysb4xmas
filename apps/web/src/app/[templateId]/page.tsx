@@ -30,7 +30,7 @@ export default async function NFTPage({params}:NFTPageProps) {
         <Image alt="Metallicus logo" src="/footer_brand_logo.png" width={130} height={34}></Image>
         <p className="text-center text-xs">
           Metal Pay is a service of Metallicus, Inc., a licensed provider of money transfer services (NMLS ID: 2057807).
-          All money transmission is provided by Metallicus, Inc. pursuant to Metallicus, Inc.’s licenses. © 2023 Metallicus, Inc. License issued to Metallicus by the Louisiana Office of Financial Institutions does not cover the exchange or transmission of virtual currency. All money transmission is provided by Metallicus, Inc. pursuant to Metallicus, Inc.'s licenses and/or the applicable law depending on the jurisdiction
+          All money transmission is provided by Metallicus, Inc. pursuant to Metallicus, Inc.’s licenses. © 2023 Metallicus, Inc. License issued to Metallicus by the Louisiana Office of Financial Institutions does not cover the exchange or transmission of virtual currency. All money transmission is provided by Metallicus, Inc. pursuant to Metallicus, Inc.@&lsquo;s licenses and/or the applicable law depending on the jurisdiction
         </p>
       </div> 
     </main>
