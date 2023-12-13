@@ -1,3 +1,159 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .container {
+    max-width: 1000px;
+  }
+  .btn.twelvedays {
+    padding: 16px; 
+  background:  linear-gradient(180deg, #FFD9A1 27%, #F19540 71%); 
+  box-shadow: 0px 4px 2px #F4EFE9 inset; 
+  border-radius: 24px; border: 1px #FFD098 solid;
+  font-size: 1.5em;
+  color: black;
+  }
+
+  .box.twelvedays {
+    padding: 16px; 
+    background: linear-gradient(0deg, black 0%, black 100%), linear-gradient(180deg, #FFD9A1 27%, #F19540 71%); 
+    box-shadow: 0px 4px 2px #F4EFE9 inset; 
+    border-radius: 24px; border: 1px #FFD098 solid;
+  }
+
+  .box.with-frame {
+
+      font-size: 20px;
+      
+      border: 10px solid black;
+      padding: 35px;
+      border-image-source: url("/nft_frame.png");
+      border-image-repeat: repeat;
+      border-image-slice: 34;
+      border-image-width: 25px;
+
+      
+    
+
+  }
+
+ 
+
+}
+
+html[data-theme="twelvedays"] .proton-link-inner,
+html[data-theme="twelvedays"] .wallet-selector-inner,
+html[data-theme="twelvedays"] .wallet-selector-connect 
+{
+  
+  background-color: #0b211c;
+  
+}
+html[data-theme="twelvedays"] .proton-link-header, 
+html[data-theme="twelvedays"] .wallet-selector-title {
+  font-family: var(--font-dm-display);
+  font-size: 2em;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #D9D9D9;
+  
+}
+html[data-theme="twelvedays"] .proton-link-header {
+
+  margin-bottom: 0;
+
+} 
+
+html[data-theme="twelvedays"] .wallet-selector-wallet-list li {
+  padding: 16px; 
+  background:  linear-gradient(180deg, #FFD9A1 27%, #F19540 71%); 
+  box-shadow: 0px 4px 2px #F4EFE9 inset; 
+  border-radius: 24px; border: 1px #FFD098 solid;
+}
+
+
+html[data-theme="twelvedays"] .wallet-selector-wallet-list li {
+  padding: 16px; 
+  background:  linear-gradient(180deg, #FFD9A1 27%, #F19540 71%); 
+  box-shadow: 0px 4px 2px #F4EFE9 inset; 
+  border-radius: 24px; border: 1px #FFD098 solid;
+  font-family: var(--font-dm-display);
+  font-size: 1em;
+  margin-left: 5px;
+  font-weight: bold;
+  color:black;
+}
+
+html[data-theme="twelvedays"] .proton-link-countdown  {
+  padding: 16px; 
+  background:  linear-gradient(180deg, #FFD9A1 27%, #F19540 71%); 
+  box-shadow: 0px 4px 2px #F4EFE9 inset; 
+  
+  border: 1px #FFD098 solid;
+  font-family: var(--font-dm-display);
+  
+  margin-left: 5px;
+  font-weight: bold;
+  color:black;
+}
+
+html[data-theme="twelvedays"] .wallet-selector-subtitle {
+  display: none;
+}
+html[data-theme="twelvedays"] .wallet-selector-connect-header:after {
+  font-size: 16px;
+    font-family: "Circular Std Book", sans-serif;
+    line-height: 24px;
+    color: var(--proton-wallet-color-font-secondary, var(--color-font-secondary));
+    text-align: center;
+  content: 'To claim Gift Crypto Not Cash NFTs';
+}
+
+html[data-theme="twelvedays"] .wallet-selector-wallet-list li .wallet-selector-logo{
+  filter:  brightness(0);
+  opacity: 0.3;
+}
+html[data-theme="twelvedays"] .wallet-selector-wallet-list li .wallet-selector-right-arrow{
+  filter:  brightness(0);
+  opacity: 0.3;
+}
+
+html[data-theme="twelvedays"] .wallet-selector-wallet-list li .wallet-selector-wallet-name{
+  font-family: var(--font-dm-display);
+  font-size: 1.5em;
+  margin-left: 5px;
+  font-weight: bold;
+  
+}
+
+html[data-theme="twelvedays"] .proton-link-inner .proton-link-button{
+  
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  border-radius: 16px;
+  
+}
+
+
+
+html[data-theme="twelvedays"] .proton-link-request{
+
+  display: grid;
+  gap:2em
+
+}
+
+html[data-theme="twelvedays"] .proton-link-info{
+
+  margin: 0 auto;
+
+}
+
+html[data-theme="twelvedays"] .proton-link-hr{
+
+  margin: 0 auto;
+  border: 1px solid #D9D9D9;
+  width: 20%;
+
+}

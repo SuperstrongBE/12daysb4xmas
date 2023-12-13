@@ -2,7 +2,13 @@ import { StoreWrapper } from '@/components/04_biomes/StoreWrapper'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import { DM_Serif_Display } from 'next/font/google'
 
+const dmdisplay = DM_Serif_Display({
+  subsets: ['latin'],
+  weight:["400"],
+  variable: '--font-dm-display',
+})
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -16,11 +22,13 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html lang="en" data-theme="twelvedays" >
+      <body className={`${inter.className} ${dmdisplay.variable}`}>
+       
         <StoreWrapper>
           {children}
         </StoreWrapper>
+        
       </body>
     </html>
   )

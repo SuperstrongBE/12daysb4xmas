@@ -10,7 +10,7 @@ type NFTLayoutProps = HTMLAttributes<HTMLDivElement> & {
   template: ITemplate,
   ipfsResolver:string
 }
-export const NFTLayout: React.FunctionComponent<NFTLayoutProps> = ({ipfsResolver,template,...rest}) => { 
+export const NFTLayout: React.FunctionComponent<NFTLayoutProps> = ({ipfsResolver,template,className,...rest}) => { 
 
   const { session } = apiCoreUseStoreState(state => state.auth.data);
   const { connect } = apiCoreUseStoreActions(state => state.auth);
@@ -24,23 +24,34 @@ export const NFTLayout: React.FunctionComponent<NFTLayoutProps> = ({ipfsResolver
     })
 
   },[session])
-  return <div {...rest}>
-    <div>
+  return <div className={`container mx-auto grid md:grid-cols-2 sm:grid-cols-1 gap-24 ${className}`} {...rest}>
+
+    <div className="relative aspect-square box with-frame">
     <Image
       alt={template.immutable_data.title}
-      src={`${ipfsResolver}/${template.immutable_data.image}`} 
-      width={200}
-      height={200}
+        src={`${ipfsResolver}/${template.immutable_data.image}`} 
+        fill
+        style={{
+          objectFit: 'contain',
+        }}
+        sizes="1280px"
     ></Image>
     </div>
-    <div>
+    <div className="grid grid-cols-1 gap-6 content-center grid-rows-[repeat(3,min-content)]">
+    <Image
+      alt={'Not cash headline'}
+      src={`/left_headline.png`} 
+      width={343}
+      height={154}
+    ></Image>
       {template.immutable_data.title}
-      {template.immutable_data.description}
-      
-    </div>
-    <XprConnectButton onClick={() => { connect() }} onAction={() => {
+      {/* <p>{template.immutable_data.description}</p> */}
+      <p className="leading-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisi nisi, aliquet id justo eu, tempus sagittis metus. Sed tincidunt, tortor quis posuere finibus, justo orci euismod velit, id dignissim est neque imperdiet ex.</p>
+      <XprConnectButton onClick={() => { connect() }} onAction={() => {
       claimActionTransact()
     }} session={session}/>
+    </div>
+    
   </div>
 
 }
