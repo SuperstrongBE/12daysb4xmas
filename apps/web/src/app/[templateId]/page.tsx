@@ -15,11 +15,9 @@ type NFTPageProps = {
   params: {
     templateId:string  
   }
-  
 }
 
 export default async function NFTPage({params}:NFTPageProps) {
-  
   const data = await getItem(params.templateId);
   return (
     <main className="grid grid-cols-1 gap-8 py-8" >
