@@ -15,12 +15,12 @@
   color: black;
   }
 
-  .box.twelvedays {
-    padding: 16px; 
-    background: linear-gradient(0deg, black 0%, black 100%), linear-gradient(180deg, #FFD9A1 27%, #F19540 71%); 
-    box-shadow: 0px 4px 2px #F4EFE9 inset; 
-    border-radius: 24px; border: 1px #FFD098 solid;
+  html[data-theme="twelvedays"] .overlay {
+    background-image: url('/noise.png')
+    
   }
+
+
 
   .box.with-frame {
 
@@ -78,7 +78,7 @@ html[data-theme="twelvedays"] .wallet-selector-wallet-list li {
   background:  linear-gradient(180deg, #FFD9A1 27%, #F19540 71%); 
   box-shadow: 0px 4px 2px #F4EFE9 inset; 
   border-radius: 24px; border: 1px #FFD098 solid;
-  font-family: var(--font-dm-display);
+  
   font-size: 1em;
   margin-left: 5px;
   font-weight: bold;
@@ -120,7 +120,6 @@ html[data-theme="twelvedays"] .wallet-selector-wallet-list li .wallet-selector-r
 }
 
 html[data-theme="twelvedays"] .wallet-selector-wallet-list li .wallet-selector-wallet-name{
-  font-family: var(--font-dm-display);
   font-size: 1.5em;
   margin-left: 5px;
   font-weight: bold;

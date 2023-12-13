@@ -45,8 +45,8 @@ export const NFTLayout: React.FunctionComponent<NFTLayoutProps> = ({ipfsResolver
       height={154}
     ></Image>
       {template.immutable_data.title}
-      {/* <p>{template.immutable_data.description}</p> */}
-      <p className="leading-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisi nisi, aliquet id justo eu, tempus sagittis metus. Sed tincidunt, tortor quis posuere finibus, justo orci euismod velit, id dignissim est neque imperdiet ex.</p>
+      <p className="leading-6">{template.immutable_data.description}</p>
+      {/* <p className="leading-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisi nisi, aliquet id justo eu, tempus sagittis metus. Sed tincidunt, tortor quis posuere finibus, justo orci euismod velit, id dignissim est neque imperdiet ex.</p> */}
       <XprConnectButton onClick={() => { connect() }} onAction={() => {
       claimActionTransact()
     }} session={session}/>
