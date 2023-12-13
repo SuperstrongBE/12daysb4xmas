@@ -20,7 +20,7 @@ type NFTPageProps = {
 export default async function NFTPage({params}:NFTPageProps) {
   const data = await getItem(params.templateId);
   return (
-    <main className="grid grid-cols-1 gap-8 py-8" >
+    <main className="grid grid-cols-1 gap-8 md:py-8 mx-8" >
       <div className="container grid pt-12 ">
         <Image alt="Metal Pay logo" src="/brand_logo.png" width={210} height={36}></Image>
       </div>
