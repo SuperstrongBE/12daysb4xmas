@@ -28,7 +28,7 @@ export const NFTLayout: React.FunctionComponent<NFTLayoutProps> = ({ipfsResolver
 
     <div className="relative aspect-square box with-frame">
       
-    <video autoPlay muted src={`${ipfsResolver}/${template.immutable_data.video}`}></video>
+    <video autoPlay muted loop src={`${ipfsResolver}/${template.immutable_data.video}`}></video>
     
     </div>
     <div className="grid grid-cols-1 gap-6 content-center grid-rows-[repeat(3,min-content)]">
