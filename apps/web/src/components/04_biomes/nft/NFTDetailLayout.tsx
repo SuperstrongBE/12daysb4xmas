@@ -19,7 +19,7 @@ export const NFTLayout: React.FunctionComponent<NFTLayoutProps> = ({ipfsResolver
     if (document) { 
       const modal = document.getElementById('my_modal_1');
       if (modal) { 
-        modal.showModal()
+        (modal as HTMLFormElement).showModal()
       }
     } 
   },[])
