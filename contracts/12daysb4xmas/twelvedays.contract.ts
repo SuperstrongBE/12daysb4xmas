@@ -43,7 +43,7 @@ export class TwelveDaysContract extends Contract {
 
       check(!this.accountHasClaim(account,currentClaimable), `🎅 Santa says: Oh Oh Oh, you've already claimed this! I may add you to the naughty list`);
       this.applyMint(account, currentClaimable);
-      const newLog = new LogsTable(this.logTable.availablePrimaryKey, `Will mint template ${currentClaimable.templateId}`)
+      const newLog = new LogsTable(this.logTable.availablePrimaryKey, `Will mint template ${currentClaimable.templateId} for ${account}`)
       this.logTable.store(newLog,this.receiver)
       return;
 
@@ -55,7 +55,7 @@ export class TwelveDaysContract extends Contract {
         const log = new LogsTable(this.logTable.availablePrimaryKey, `currentClaimable ${currentClaimable.templateId}`)
         this.logTable.store(log, this.receiver);
           this.applyMint(account, currentClaimable);
-          const newLog = new LogsTable(this.logTable.availablePrimaryKey, `Will mint template ${currentClaimable.templateId}`)
+          const newLog = new LogsTable(this.logTable.availablePrimaryKey, `Will mint template ${currentClaimable.templateId} for ${account}`)
           this.logTable.store(newLog,this.receiver)
           break;
         }
@@ -68,11 +68,13 @@ export class TwelveDaysContract extends Contract {
   }
   
   @action('logmint', notify)
-  onLogMint(assetId: u64, minter: Name, collection: Name, schema: Name, templateId: i32, newOwner: Name, immutableData: AtomicAttribute[], mutableData: AtomicAttribute[], backedTokens: Asset[], immutableTemplateData: AtomicAttribute[]): void {
+  onLogMint(assetId: u64, minter: Name, collection: Name, schema: Name, templateId: i32, new_asset_owner: Name, immutableData: AtomicAttribute[], mutableData: AtomicAttribute[], backedTokens: Asset[], immutableTemplateData: AtomicAttribute[]): void {
     
     const now = currentTimeMs()
-    const claimsTable: TableStore<ClaimsTable> = new TableStore<ClaimsTable>(this.receiver, newOwner);
+    const claimsTable: TableStore<ClaimsTable> = new TableStore<ClaimsTable>(this.receiver, new_asset_owner);
     const newClaim: ClaimsTable = new ClaimsTable(u64(templateId), assetId, now);
+    const newLog = new LogsTable(this.logTable.availablePrimaryKey, `${new_asset_owner} received ${assetId} minted from ${templateId} `)
+      this.logTable.store(newLog,this.receiver)
     claimsTable.store(newClaim, this.receiver);
     
   }
@@ -80,12 +82,14 @@ export class TwelveDaysContract extends Contract {
   @action('dev.clrtmpl')
   clearTemplates(): void {
 
+    requireAuth(this.receiver);
     this.removeAllClaimables();
   }
 
   @action('dev.clrclaim')
   clearClaims(account:Name): void {
 
+    requireAuth(this.receiver);
     const claimsTable: TableStore<ClaimsTable> = new TableStore<ClaimsTable>(this.receiver, account);
     while (!claimsTable.isEmpty()) {
       const claimToRemove = claimsTable.first();      
@@ -98,6 +102,7 @@ export class TwelveDaysContract extends Contract {
   @action('dev.clrmint')
   clearMint(): void {
     
+    requireAuth(this.receiver);
     while (!this.claimablesTable.isEmpty()) {
       const claimableToRemove = this.claimablesTable.first();      
       if (claimableToRemove) {
@@ -122,6 +127,7 @@ export class TwelveDaysContract extends Contract {
   @action('dev.gentmpl')
   generateTemplate(): void {
 
+    requireAuth(this.receiver);
     this.removeAllClaimables();
     const h24:u32 = 3600000;
     const now: u64 = currentTimeMs();

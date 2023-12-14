@@ -14,6 +14,16 @@
   font-size: 1.5em;
   color: black;
   }
+  
+  .avatar-twelvedays {
+  
+    background:  linear-gradient(180deg, #FFD9A1 27%, #F19540 71%); 
+    box-shadow: 0px 4px 2px #F4EFE9 inset; 
+    display: flex!important;
+    justify-content: center;
+    align-items: center;
+  
+  }
 
   html[data-theme="twelvedays"] .overlay {
     background-image: url('/noise.png')
